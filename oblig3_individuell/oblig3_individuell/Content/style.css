@@ -1,0 +1,85 @@
+﻿/*--------------------------------------ALLE SIDER START--------------------------------------------*/
+.main_container { /*Begrenser hvor mye siden kan zoomes ut*/
+    max-width: 100em;
+    margin-left: auto;
+    margin-right: auto;
+}
+.margin-body{ /*Legger på margin på sidene*/
+    margin-left:3em;
+    margin-right:3em;
+}
+h1{
+    font-size: 2em;
+}
+/*--------------------------------------ALLE SIDER SLUTT---------------------------------------------*/
+
+/*--------------------------------------MENY START---------------------------------------------------*/
+.fix-navbar{ /*Gir lillafargen til navigasjonen, overalt*/
+    margin-bottom:0;
+    background-color: #9D2053;
+    border-color: #9D2053;
+}
+#placementNav a { /*Skriftfarge paa meny, overalt*/
+    color: #ffffff;
+}
+#placementNav a:hover { /*Hover-farge paa meny, overalt*/
+    color: #ecc733; /*sennepsgul*/
+}
+#placementNav .bankIcon a {
+    padding: 0; /*Fjerner padding rundt ikonet*/
+}
+#placementNav{ /*Meny i nettbanken, etter logginn*/
+   margin-left:3em;
+   padding-top:0.5em;
+   padding-bottom:0.5em;
+}
+.hovere:hover {
+    cursor:pointer;
+}
+
+
+
+/*------------KOLLAPSET MENY-----------------*/
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {/*gir lilla-farge til hamburger-knapp på kollapset meny*/
+    background-color: #9d2053 !important;
+}
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {/*gir hvit farge til streken på kollapset meny*/
+    border-color: #ffffff !important; 
+}
+.navbar-toggle {
+    border-color: #e2e2e2 !important;/*overdøver bootstrap!*/
+}
+.navbar-toggle:hover {
+    background-color: #d60057 !important; /*overdøver bootstrap!*/
+}
+/*--------------------------------------MENY SLUTT---------------------------------------------------*/
+
+/*--------------------------------------LOGG INN-SIDE START------------------------------------------*/
+
+
+.marg-label{
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    padding-top: 15px;
+}
+.set-float{
+    float:left;
+}
+
+.margin-placement{ /*Plassering av logg inn-boks*/
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom:1em;
+    padding-top:1em;
+    max-width: 30%;
+    min-width:250px;
+}
+
+/*--------------------------------------LOGG INN-SIDE SLUTT-------------------------------------------------*/
+/*Angular*/
+
+#knapp{
+    margin: 2em;
+}

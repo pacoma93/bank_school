@@ -1,0 +1,172 @@
+﻿<nav class="navbar navbar-inverse fix-navbar">
+    <div class="container-fluid" id="placementNav">
+        <div class="navbar-header">
+            <button type="button" id="farge" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <ul class="nav navbar-nav navbar-header">
+                <li class="bankIcon">
+                    <div>
+                        <a class="navbar-brand fix-a" href="#">
+                            <img class="set-float" src="images/money_pig48.png" /> <!--Logo-->
+                            <label class="set-float marg-label">Pilestredet Bank</label>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a class="hovere"(click)="kalkulatorside()"><i class="fa fa-info" aria-hidden="true"></i>  Registrer lån</a></li>
+                <li><a class="hovere" (click)="vislaanListe()"><i class="fa fa-phone" aria-hidden="true"></i>  Vis søknader</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <div ng-model="laan" class="col-sm-8 col-sm-offset-1" *ngIf="visKalkulator"><!--LÅNEKALKULATOR-->
+        <div class="page-header">
+            <h1>Lån inntil 500 000 kr!</h1>
+        </div>
+        <div class="col-sm-6"><!--belopet-->
+            <h1>Lånebeløp</h1>
+            <input type="range" (input)="verdi()" id="myRange" step="5000" value="{{laan.grunnbelop}}" min="10000" max="500000">
+            <label id="laanbelop" class="text-info">{{laan.grunnbelop}}</label><label>,-</label>
+        </div>
+        <div class="col-sm-6"><!--antall år-->
+            <h1>Nedbetalingstid</h1>
+            <input type="range" (input)="verdiaar()" id="myRangeYear" value="{{laan.aar}}" min="3" max="15">
+            <label id="antAar" class="text-info">{{laan.aar}}</label><label class="text-info"> år</label>
+        </div>
+        <div class="col-sm-6"><!--pris per måned-->
+            <h1>Pris per måned</h1>
+            <label id="prisPerM" class="text-info">{{laan.sumPrMnd}}</label><label class="text-info">,-</label>
+        </div>
+        <div class="col-sm-6">
+            <!--rente-->
+            <h1>rente i prosent</h1>
+            <label id="rentelaan" class="text-info">7</label><label class="text-info">% </label>
+        </div>
+        <div class="col-sm-3 col-sm-offset-9">
+            <!--rente-->
+            <button class="btn btn-success" (click)="registrerlaan()">Søk nå!</button>
+        </div>
+        
+    </div><!---------------------------------------slutt på LÅNEKALKULATOR--------------------------------------------------------->
+    <div class="col-sm-12 table-responsive" *ngIf="visListe">
+        <!--liste av lånesøknader-->
+        <table class="table">
+            <tr>
+                <th>Personnummer</th>
+                <th>Telefon</th>
+                <th>Epost</th>
+                <th>Beløp</th>
+                <th>Nedbetalingstid</th>
+                <th>Pris Per måned</th>
+                <th>Rente i %</th>
+            </tr>
+            <tbody *ngFor="let laan of liste">
+                <tr>
+                    <td>{{laan.personnr}}</td>
+                    <td>{{laan.telefon}}</td>
+                    <td>{{laan.epost}}</td>
+                    <td>{{laan.grunnbelop}}</td>
+                    <td>{{laan.aar}} år</td>
+                    <td>{{laan.sumPrMnd}}</td>
+                    <td>{{laan.rentefot}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!--slutt på liste av lånesøknader-->
+    <div class="col-sm-8 col-sm-offset-1" *ngIf="visRegForm" ng-controller="app.component.ts">
+    <!--Registreringsformen-->
+        <a href="#" (click)="kalkulatorside()"><span class="glyphicon glyphicon-chevron-left"></span>Tilbake</a>
+        <form [formGroup]="skjema" (ngSubmit)="vedSubmit()">
+            <div class="col-sm-12page-header">
+                <!--rente-->
+                <h1>Registrer lånet ditt!</h1>
+            </div>
+            <div class="col-sm-6 page-header" id="visBeløp">
+                <label>Beløp:</label>
+                <p>{{laan.grunnbelop}},-</p>
+            </div>
+            <div class="col-sm-6 page-header">
+                <label>Nedbetaling</label>
+                <p>{{laan.aar}} år</p>
+            </div>
+            <div class="col-sm-6 page-header">
+                <label>sum per måned:</label>
+                <p>{{laan.sumPrMnd}},-</p>
+            </div>
+            <div class="col-sm-6 page-header">
+                <label for="rente">Rente:</label>
+                <p>{{laan.rentefot}}%</p>
+            </div>
+            <table class="table">
+                <tr>
+                    <td>
+                        <div class="form-group col-sm-6">
+                            <label for="persnummer">Personnummer:</label>
+                            <input type="text" class="form-control" (input)="sjekkPersonnr()" id="Persnummer" formControlName="personnr">
+                            <p class="alert alert-warning" [hidden]="skjema.controls.personnr.valid || (skjema.controls.personnr.pristine && !submitted)">
+                                Pesonummer er obligatorisk.
+                            </p>
+                            <p class="alert alert-warning" *ngIf="personnrSjekk">
+                                Pesonummer eksisterer fra før.
+                            </p>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label for="telefon">Mobiltelefon:</label>
+                            <input type="text" class="form-control" id="Telefon" formControlName="telefon">
+                            
+                            <p class="alert alert-warning" [hidden]="skjema.controls.telefon.valid || (skjema.controls.telefon.pristine && !submitted)">
+                                Telefonnummer skal være 8 siffer.
+                            </p>
+                        </div>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="form-group col-sm-6">
+                            <label for="email">E-post:</label>
+                            <input type="text" class="form-control" id="Email" formControlName="epost">
+                            <p class="alert alert-warning" [hidden]="skjema.controls.epost.valid || (skjema.controls.epost.pristine && !submitted)">
+                                Eks: nina-97@hotmail.com
+                            </p>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            
+                            <button type="submit" name="knapp" class="btn btn-primary" [disabled]="(!skjema.valid || personnrSjekk) || skjema.controls.epost.pristine || skjema.controls.telefon.pristine || skjema.controls.personnr.pristine" id="knapp" data-toggle="modal" data-target="#myModal">Registrer søknad</button>
+                            <label id="vente"></label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
+            
+            
+        </form>
+    </div><!--slutt på liste av Registreringsformen-->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" (click)="fjern()" data-dismiss="modal">&times;</button>
+                <h4 id="Moverskrift" class="modal-title"></h4>
+            </div>
+            <div class="modal-body">
+                <p id="textbeststill">Du har registrert! </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"  data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>

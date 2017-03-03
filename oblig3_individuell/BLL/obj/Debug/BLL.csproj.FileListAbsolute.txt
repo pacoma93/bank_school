@@ -1,0 +1,11 @@
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\BLL\bin\Debug\BLL.dll
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\BLL\bin\Debug\BLL.pdb
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\BLL\bin\Debug\DAL.dll
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\BLL\bin\Debug\Model.dll
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\BLL\bin\Debug\EntityFramework.dll
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\BLL\bin\Debug\DAL.pdb
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\BLL\bin\Debug\Model.pdb
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\BLL\bin\Debug\EntityFramework.xml
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\BLL\obj\Debug\BLL.dll
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\BLL\obj\Debug\BLL.pdb

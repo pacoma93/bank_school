@@ -1,0 +1,12 @@
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\DAL\bin\Debug\DAL.dll.config
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\DAL\bin\Debug\DAL.dll
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\DAL\bin\Debug\DAL.pdb
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\DAL\bin\Debug\Model.dll
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\DAL\bin\Debug\Model.pdb
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\DAL\obj\Debug\DAL.dll
+C:\Users\Paul\documents\visual studio 2015\Projects\Oblig3_individuell\DAL\obj\Debug\DAL.pdb
